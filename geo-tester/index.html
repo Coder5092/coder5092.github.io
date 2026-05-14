@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Geometry Question Tester v0.0</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="notification">
+    <p><b>Notification</b></p>
+  </div>
+
+  <div id="screen">
+    <h1>Good luck.</h1>
+    <h2>Have a great time.</h2>
+  </div>
+  
+  <div id="wrapper">
+    <h2 id="header">Geo Question Tester v0.0</h2>
+
+    <!-- <fieldset id="topbar" style="display: none;">
+      <legend>Geo Question Tester v0.0</legend>
+    </fieldset> -->
+    
+    <fieldset id="questions" class="willFillTop">
+      <legend>Questions</legend>
+      <noscript>Javascript is disabled. It needs to be enabled for this page to function.</noscript>
+    </fieldset>
+
+    <input id="input" placeholder="Enter answer..." />
+    <button id="submit" onclick="submit()">Submit</button>
+
+    <fieldset id="options" class="willFillTop">
+      <legend>Options</legend>
+      <p><b>Postulates</b></p>
+      <input checked name="postulateC1" type="checkbox" class="tpCheck" />
+      <label for="postulateC1">Chapter 1 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <!-- <input checked name="postulateC2" type="checkbox" class="tpCheck" />
+      <label for="postulateC2">Chapter 2</label>
+      <br /> -->
+      <input checked name="postulateC3" type="checkbox" class="tpCheck" />
+      <label for="postulateC3">Chapter 3 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <input checked name="postulateC4" type="checkbox" class="tpCheck" />
+      <label for="postulateC4">Chapter 4 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <!-- <input checked name="postulateC5" type="checkbox" class="tpCheck" />
+      <label for="postulateC5">Chapter 5</label>
+      <br />
+      <input checked name="postulateC6" type="checkbox" class="tpCheck" />
+      <label for="postulateC6">Chapter 6</label>
+      <br /> -->
+      <input checked name="postulateC7" type="checkbox" class="tpCheck" />
+      <label for="postulateC7">Chapter 7 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <!-- <input checked name="postulateC8" type="checkbox" class="tpCheck" />
+      <label for="postulateC8">Chapter 8</label>
+      <br /> -->
+      <input checked name="postulateC9" type="checkbox" class="tpCheck" />
+      <label for="postulateC9">Chapter 9 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <!-- <input checked name="postulateC10" type="checkbox" class="tpCheck" />
+      <label for="postulateC10">Chapter 10</label>
+      <br /> -->
+      <input checked name="postulateC11" type="checkbox" class="tpCheck" />
+      <label for="postulateC11">Chapter 11 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <!-- <input checked name="postulateC12" type="checkbox" class="tpCheck" />
+      <label for="postulateC12">Chapter 12</label> -->
+      <!-- <br />
+      <input checked name="postulateC13" type="checkbox" class="tpCheck" />
+      <label for="postulateC13">Chapter 13</label>
+      <br />
+      <input checked name="postulateC14" type="checkbox" class="tpCheck" />
+      <label for="postulateC14">Chapter 14</label> -->
+
+      <br /><br />
+      <p><b>Theorems</b></p>
+      <input checked name="theoremC1" type="checkbox" class="tpCheck" />
+      <label for="theoremC1">Chapter 1 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <input checked name="theoremC2" type="checkbox" class="tpCheck" />
+      <label for="theoremC2">Chapter 2 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <input checked name="theoremC3" type="checkbox" class="tpCheck" />
+      <label for="theoremC3">Chapter 3 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <input checked name="theoremC4" type="checkbox" class="tpCheck" />
+      <label for="theoremC4">Chapter 4 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <input checked name="theoremC5" type="checkbox" class="tpCheck" />
+      <label for="theoremC5">Chapter 5 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <input checked name="theoremC6" type="checkbox" class="tpCheck" />
+      <label for="theoremC6">Chapter 6 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <input checked name="theoremC7" type="checkbox" class="tpCheck" />
+      <label for="theoremC7">Chapter 7 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <input checked name="theoremC8" type="checkbox" class="tpCheck" />
+      <label for="theoremC8">Chapter 8 <span class="practiceLabel">Practice recommended</span></label>
+      <br />
+      <input checked name="theoremC9" type="checkbox" class="tpCheck" />
+      <label for="theoremC9">Chapter 9 <span class="practiceLabel">Practice recommended</span></label>
+      <!-- <br />
+      <input checked name="theoremC10" type="checkbox" class="tpCheck" />
+      <label for="theoremC10">Chapter 10</label>
+      <br />
+      <input checked name="theoremC11" type="checkbox" class="tpCheck" />
+      <label for="theoremC11">Chapter 11</label>
+      <br />
+      <input checked name="theoremC12" type="checkbox" class="tpCheck" />
+      <label for="theoremC12">Chapter 12</label>
+      <br />
+      <input checked name="theoremC13" type="checkbox" class="tpCheck" />
+      <label for="theoremC13">Chapter 13</label>
+      <br />
+      <input checked name="theoremC14" type="checkbox" class="tpCheck" />
+      <label for="theoremC14">Chapter 14</label> -->
+
+      
+      <br /><br />
+      <p><b>Other Options</b></p>
+      <input name="allowHints" type="checkbox" />
+      <label for="allowHints">Show Chapter</label>
+      <br />
+      <input name="hardmode" class="hardmode" type="checkbox" id="killswitch" />
+      <label for="hardmode" class="hardmode">Super Ultimate Extra Ultra Very Excessive Extremely Hard Mode</label>
+    </fieldset>
+
+    <fieldset id="suggestions">
+      <legend>Results</legend>
+      <p>Questions: <span style="color: green;" id="correct">0</span>/<span style="color: red;" id="incorrect">0</span>/<span id="total">0</span></p>
+      <p id="accuracy">Accuracy: 100%</p>
+      <br />
+      <p id="seenQ">You have seen 0/111 questions.</p>
+    </fieldset>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
