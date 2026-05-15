@@ -451,12 +451,12 @@ function updateValidTheorems() {
   console.log(validPostulates.length + " " + validTheorems.length);
 }
 
-function notify(text) {
-  document.querySelector('div#notification > p').innerHTML = "<b>Notification</b><br />" + text;
+// function notify(text) {
+//   document.querySelector('div#notification > p').innerHTML = "<b>Notification</b><br />" + text;
 
-  let notification = document.querySelector('div#notification');
-  notification.style.animation = "3s ease-in forwards notify-slide";
-}
+//   let notification = document.querySelector('div#notification');
+//   notification.style.animation = "3s ease-in forwards notify-slide";
+// }
 
 var currentAnswer = 0;
 var isTheorem = false;

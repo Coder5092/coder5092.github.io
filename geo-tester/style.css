@@ -251,7 +251,7 @@ fieldset#topbar {
   }
 }
 
-div#notification {
+/* div#notification {
   width: 30vw;
   height: 60px;
 
@@ -283,7 +283,7 @@ div#notification {
   100% {
     translate: calc(30vw + 50px) 0px;
   }
-}
+} */
 
 h2#header {
   grid-column: 1 / 4;
