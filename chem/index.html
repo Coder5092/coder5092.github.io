@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chemistry</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="create">
+      <div id="innerBohr">p=1<br />n=1</div>
+      <div id="subshell1"></div>
+      <div id="subshell2"></div>
+      <div id="subshell3"></div>
+      <div id="subshell4"></div>
+      <div id="subshell5"></div>
+      <div id="subshell6"></div>
+      <div id="subshell7"></div>
+    </div>
+    <div id="createOverlay">
+      <p id="elementName">Hydrogen-1 (1s1)</p>
+      <p id="elementInfoIcons">Stable</p>
+    </div>
+    <div id="table">
+      <div id="tableInfoDiv" class="earned">
+        <span class="number">1</span>
+        <span class="symbol">H</span>
+        <span class="weight">1.008</span>
+      </div>
+    </div>
+    <div id="toolbar">
+    </div>
+    <div id="toolmenu">
+      <label for="isotopeSelection">Isotope:</label>
+      <select id="isotopeSelection" name="isotopeSelection" required>
+        <option>Hydrogen-1</option>
+        <option>Hydrogen-2</option>
+        <option>Hydrogen-3</option>
+      </select>
+      <br />
+      <label for="decaySelection" id="decaySelectionLabel" style="visibility: hidden;">Decay type:</label>
+      <select id="decaySelection" name="decaySelection" required style="visibility: hidden;"></select>
+      <button id="decayButton" style="visibility: hidden;">Decay</button>
+    </div>
+    <div id="decayTree">
+      <p>
+        Decay Tree
+        <button id="trackButton">Begin Tracking</button>
+      </p>
+      <div id="initialTrack"></div>
+    </div>
+  </div>
+  <script src="script.js" type="module"></script>
+  <script src="modules/data.mjs" type="module"></script>
+</body>
+
+</html>
