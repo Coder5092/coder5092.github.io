@@ -37,6 +37,10 @@
         <option>Hydrogen-1</option>
         <option>Hydrogen-2</option>
         <option>Hydrogen-3</option>
+        <option>Hydrogen-4</option>
+        <option>Hydrogen-5</option>
+        <option>Hydrogen-6</option>
+        <option>Hydrogen-7</option>
       </select>
       <br />
       <label for="decaySelection" id="decaySelectionLabel" style="visibility: hidden;">Decay type:</label>
@@ -48,11 +52,14 @@
         Decay Tree
         <button id="trackButton">Begin Tracking</button>
       </p>
-      <div id="initialTrack"></div>
+      <ol id="decayList">
+        <li id="initialTrack">Hydrogen-1</li>
+      </ol>
     </div>
   </div>
   <script src="script.js" type="module"></script>
   <script src="modules/data.mjs" type="module"></script>
+  <script src="modules/isotope_finding/isotopedata.mjs" type="module"></script>
 </body>
 
 </html>

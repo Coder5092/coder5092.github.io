@@ -4,10 +4,11 @@ var tracking = false;
 
 document.addEventListener("DOMContentLoaded", () => {
   let showElementInCreateTab = (data, targetAmu) => {
-    // if (!element.classList.contains('earned')) return;
-
     let idx = isFinite(parseInt(data)) ? data - 1 : elementIndexing.indexOf(data.querySelector('.symbol').innerText);
     let el = elements[idx];
+    
+    let symbolElement = document.getElementById('element' + idx);
+    if (!symbolElement.classList.contains('earned') && !tracking) return;
 
     let eConfig = Element.electronConfig(idx + 1);
     let eConfigS = Element.electronConfigSimple(idx + 1);
@@ -33,6 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
       isotopes.appendChild(isotope);
     });
 
+    if (tracking) {
+      let li = document.createElement('li');
+      li.innerText = isotopes.value;
+
+      document.getElementById('decayList').appendChild(li);
+      if (! symbolElement.classList.contains('earned')) symbolElement.classList.add('earned');
+    }
+
     document.getElementById("elementName").innerText = isotopes.value + " (" + eConfig + ")";
     isotopes.dispatchEvent(new Event('change', { bubbles: true }));
   }
@@ -43,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let addElement = (i, j) => {
     let element = document.createElement('div');
     element.style.gridArea = i + " / " + j;
+    element.id = 'element' + elementNo;
 
     let periodicElement = elements[elementNo++].symbol;
 
@@ -111,7 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.querySelector("#table > div:nth-child(2)").classList.add('earned');
-  document.querySelector("#table > div:nth-child(3)").classList.add('earned');
 
   document.getElementById("isotopeSelection").addEventListener('change', event => {
     let elementName = event.target.value.split('-')[0];
@@ -142,6 +151,14 @@ document.addEventListener("DOMContentLoaded", () => {
       if (newIsotope == null || newIsotope == undefined) console.error('failed to decay');
       else showElementInCreateTab(newIsotope.protons, newIsotope.amu);
     };
+
+    if (tracking) {
+      let lastLi = document.querySelector('#decayList li:last-child');
+      if (!lastLi.innerText.endsWith(`${elementName}-${isotopeNum}`)) lastLi.innerText += ` -> ${elementName}-${isotopeNum}`;
+    } else {
+      document.getElementById('initialTrack').innerText = `${elementName}-${isotopeNum}`;
+      document.querySelectorAll('#decayList li:not(#initialTrack)').forEach(e => e.remove());
+    }
   });
 
   document.getElementById('trackButton').onclick = event => {
@@ -154,3 +171,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 });
+
+console.log(elements, elementIndexing, elementNameIndexing);

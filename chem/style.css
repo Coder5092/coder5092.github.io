@@ -43,6 +43,8 @@ div#wrapper>* {
   background-color: black;
   color: white;
 
+  z-index: 0;
+
   &#create {
     grid-row: 1;
     grid-column: 1;
@@ -295,7 +297,8 @@ div#wrapper>* {
     grid-column: 2 / 4;
     padding: 4px;
 
-    display: grid;
+    overflow: auto;
+    position: relative;
 
     &>p:first-child {
       color: white;
@@ -307,6 +310,22 @@ div#wrapper>* {
     &>p:first-child>button:first-of-type {
       margin-left: 4px;
       display: inline-block;
+    }
+
+    &>ol {
+      color: white;
+      position: absolute;
+      
+      & li {
+        width: fit-content;
+        padding: 4px;
+
+        display: list-item;
+      }
+
+      & li::marker {
+        color: white;
+      }
     }
   }
 }
